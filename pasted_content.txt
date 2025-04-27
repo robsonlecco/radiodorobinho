@@ -1,0 +1,13 @@
+ { nome: "A estação", url: "https://archive.org/download/vou-viajar-no-tempo/A%20esta%C3%A7%C3%A3o.mp3" },
+      { nome: "Estradas", url: "https://archive.org/download/vou-viajar-no-tempo/Estradas.mp3" },
+      { nome: "Medo de quê", url: "https://archive.org/download/vou-viajar-no-tempo/Medo%20de%20qu%C3%AA.mp3" },
+      { nome: "Morena do mar", url: "https://archive.org/download/vou-viajar-no-tempo/Morena%20do%20mar.mp3" },
+      { nome: "O que eu quero", url: "https://archive.org/download/vou-viajar-no-tempo/O%20que%20eu%20quero.mp3" },
+      { nome: "O que você fez no dia de hoje", url: "https://archive.org/download/vou-viajar-no-tempo/O%20que%20voc%C3%AA%20fez%20no%20dia%20de%20hoje.mp3" },
+      { nome: "Onde você está", url: "https://archive.org/download/vou-viajar-no-tempo/Onde%20voc%C3%AA%20est%C3%A1%20-%20Autor%20Robson%20Lecco.mp3" },
+      { nome: "Quando você me ligou", url: "https://archive.org/download/vou-viajar-no-tempo/Quando%20voc%C3%AA%20me%20ligou%20-%20Autor%20Robson%20Lecco.mp3" },
+      { nome: "Seguindo o sistema", url: "https://archive.org/download/vou-viajar-no-tempo/Seguindo%20o%20sistema%20-%20Autor%20Robson%20Lecco.mp3" },
+      { nome: "Sonhei com você", url: "https://archive.org/download/vou-viajar-no-tempo/Sonhei%20com%20voc%C3%AA.mp3" },
+      { nome: "Verdades", url: "https://archive.org/download/vou-viajar-no-tempo/Verdades%20-%20Autor%20Robson%20Lecco.mp3" },
+      { nome: "Você me faz falta", url: "https://archive.org/download/vou-viajar-no-tempo/Voc%C3%AA%20me%20faz%20falta.mp3" },
+      { nome: "Vou viajar no tempo", url: "https://archive.org/download/vou-viajar-no-tempo/Vou%20viajar%20no%20tempo.mp3" }
