@@ -1,0 +1,55 @@
+<!-- Código para substituir o widget da rádio no Blogspot -->
+<div class="radio">
+  <div class="radio-title">🎧 Rádio do Robinho 🎶</div>
+  <div class="track-title" id="musicaAtual">Clique em Play para ouvir</div>
+  <button onclick="abrirRadioEmNovaJanela()">▶ Play</button>
+  <button onclick="abrirRadioEmNovaJanela()">⏭ Avançar</button>
+  <audio id="player" controls=""></audio>
+  
+  <script>
+    // Função para abrir a rádio em uma nova janela
+    function abrirRadioEmNovaJanela() {
+      // Substitua esta URL pelo endereço onde você hospedou a página da rádio
+      var urlDaRadio = "https://SEU-SITE-AQUI.com/radio.html";
+      window.open(urlDaRadio, "_blank", "width=500,height=600");
+    }
+  </script>
+</div>
+
+<!-- Adicione este CSS ao seu template do Blogspot -->
+<style>
+  .radio {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+  }
+  
+  .radio-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffcc00;
+  }
+  
+  .track-title {
+    margin-bottom: 15px;
+    font-style: italic;
+  }
+  
+  .radio button {
+    background-color: #ffcc00;
+    border: none;
+    color: #222;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  
+  .radio button:hover {
+    background-color: #e6b800;
+  }
+</style>
