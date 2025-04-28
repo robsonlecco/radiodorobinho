@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rádio do Robinho</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #222;
+            color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .radio-container {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        h1 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        p {
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+        #track-info {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            min-height: 1.5em; /* Para evitar pulos de layout */
+        }
+        audio {
+            width: 100%;
+            margin-top: 15px;
+            filter: invert(1) hue-rotate(180deg); /* Estilo simples para o player */
+        }
+        .controls button {
+            background-color: #ffcc00;
+            border: none;
+            color: #222;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .controls button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="radio-container">
+        <h1>Rádio do Robinho</h1>
+        <p>Na rádio do Robinho, você nunca está sozinho!</p>
+        <div id="track-info">Carregando rádio...</div>
+        <audio id="player" controls autoplay></audio>
+        <div class="controls">
+            <button id="prevBtn">⏮ Anterior</button>
+            <button id="nextBtn">Próxima ⏭</button>
+        </div>
+    </div>
+
+    <script>
+        const player = document.getElementById('player');
+        const trackInfo = document.getElementById('track-info');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        const playlist = [
+            { nome: "A estação", url: "https://archive.org/download/vou-viajar-no-tempo/A%20esta%C3%A7%C3%A3o.mp3" },
+            { nome: "Estradas", url: "https://archive.org/download/vou-viajar-no-tempo/Estradas.mp3" },
+            { nome: "Medo de quê", url: "https://archive.org/download/vou-viajar-no-tempo/Medo%20de%20qu%C3%AA.mp3" },
+            { nome: "Morena do mar", url: "https://archive.org/download/vou-viajar-no-tempo/Morena%20do%20mar.mp3" },
+            { nome: "O que eu quero", url: "https://archive.org/download/vou-viajar-no-tempo/O%20que%20eu%20quero.mp3" },
+            { nome: "O que você fez no dia de hoje", url: "https://archive.org/download/vou-viajar-no-tempo/O%20que%20voc%C3%AA%20fez%20no%20dia%20de%20hoje.mp3" },
+            { nome: "Onde você está", url: "https://archive.org/download/vou-viajar-no-tempo/Onde%20voc%C3%AA%20est%C3%A1%20-%20Autor%20Robson%20Lecco.mp3" },
+            { nome: "Quando você me ligou", url: "https://archive.org/download/vou-viajar-no-tempo/Quando%20voc%C3%AA%20me%20ligou%20-%20Autor%20Robson%20Lecco.mp3" },
+            { nome: "Seguindo o sistema", url: "https://archive.org/download/vou-viajar-no-tempo/Seguindo%20o%20sistema%20-%20Autor%20Robson%20Lecco.mp3" },
+            { nome: "Sonhei com você", url: "https://archive.org/download/vou-viajar-no-tempo/Sonhei%20com%20voc%C3%AA.mp3" },
+            { nome: "Verdades", url: "https://archive.org/download/vou-viajar-no-tempo/Verdades%20-%20Autor%20Robson%20Lecco.mp3" },
+            { nome: "Você me faz falta", url: "https://archive.org/download/vou-viajar-no-tempo/Voc%C3%AA%20me%20faz%20falta.mp3" },
+            { nome: "Vou viajar no tempo", url: "https://archive.org/download/vou-viajar-no-tempo/Vou%20viajar%20no%20tempo.mp3" }
+        ];
+
+        let currentTrackIndex = 0;
+
+        function loadTrack(index) {
+            if (index >= 0 && index < playlist.length) {
+                currentTrackIndex = index;
+                const track = playlist[currentTrackIndex];
+                player.src = track.url;
+                trackInfo.textContent = `Tocando agora: ${track.nome}`;
+                // player.play(); // Autoplay já está no elemento audio
+            } else {
+                console.error("Índice da faixa inválido:", index);
+                // Opcional: parar ou carregar a primeira faixa
+                loadTrack(0); 
+            }
+        }
+
+        function nextTrack() {
+            const nextIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(nextIndex);
+        }
+
+        function prevTrack() {
+            const prevIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+            loadTrack(prevIndex);
+        }
+
+        // Event Listeners
+        player.addEventListener('ended', nextTrack);
+        nextBtn.addEventListener('click', nextTrack);
+        prevBtn.addEventListener('click', prevTrack);
+
+        // Carregar a primeira faixa ao iniciar
+        loadTrack(0);
+
+    </script>
+</body>
+</html>
